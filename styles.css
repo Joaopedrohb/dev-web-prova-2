@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 200px 1fr 200px;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: #4682b4;
+}
+
+main {
+    max-width: 100ch;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.h1-header {
+    color: white;
+    font-family: Arial, serif;
+}
+
+.researcher {
+    position: relative;
+}
+
+.search-input {
+    width: 40vw;
+    height: 4vh;
+    border-radius: 4px;
+    border: none;
+}
+
+.search-input::placeholder {
+    padding-left: 0.5rem;
+}
+
+.research-button {
+    cursor: pointer;
+    position: absolute;
+    right: 0.5rem;
+    top: 15%;
+    border: none;
+    background: none;
+}
+
+.filter-container {
+    position: relative;
+    display: inline-block;
+}
+
+.filter-svg {
+    position: absolute;
+    right: 20px;
+    top: 65%;
+    cursor: pointer;
+}
+
+.filter-count {
+    position: absolute;
+    top: 70%;
+    right: 8px;
+    background-color: white;
+    color: #4682b4;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.filter-dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    max-width: 500px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    position: relative;
+}
+
+.filter-dialog .form-group {
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.filter-dialog .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.filter-dialog label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.filter-dialog select,
+.filter-dialog input {
+    width: calc(100% - 1rem);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.apply-filters-button {
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.apply-filters-button:hover {
+    background-color: #5a9bd6;
+}
+
+.close-dialog-button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.news-list {
+    list-style-type: none;
+}
+
+.news-list li {
+    list-style-type: none;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.news-image {
+    width: 200px;
+    object-fit: cover;
+    border-right: 1px solid #ddd;
+}
+
+.news-text-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
+}
+
+.news-title {
+    font-size: 1.3em;
+    margin: 0 0 10px 0;
+}
+
+.news-intro {
+    margin: 10px 0;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.news-date {
+    font-size: 0.9em;
+}
+
+.news-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.news-tags span {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.news-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start;
+    text-align: center;
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    border: 1px solid #4682b4;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #4682b4;
+}
+
+.pagination button:hover {
+    background-color: #4682b4;
+    color: white;
+}
+
+.pagination button[style*="background-color: #4682b4"] {
+    color: #4682b4;
+    cursor: default;
+}
+
+.filter-dialog .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.pagination {
+    list-style-type: none;
+}
+
+.pagination li {
+    list-style-type: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+}
+
+@media (min-width: 760px) {
+    .filter-dialog .form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
